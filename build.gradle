@@ -14,7 +14,7 @@ sonarqube {
     property "sonar.projectKey", "aepeak_sq-playground"
     property "sonar.organization", "aepeak"
     property "sonar.host.url", "https://sonarcloud.io"
-	property "sonar.login", "9107c224f11eaf6b92e5c75db7fdf5da564e767e"
+	property "sonar.login", "fe56d17358e149c2a28eb41d58776c0843b3d300"
   }
 }
 
@@ -61,13 +61,4 @@ tasks.named('test') {
 	}
 	finalizedBy jacocoTestReport
 	// exclude '**/*ServiceTest*.class'
-}
-
-sonar {
-  properties {
-    property "sonar.projectKey", "aepeak_sq-playground"
-    property "sonar.organization", "aepeak"
-    property "sonar.host.url", "https://sonarcloud.io"
-	property "sonar.login", "9107c224f11eaf6b92e5c75db7fdf5da564e767e"
-  }
 }
