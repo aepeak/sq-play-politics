@@ -13,12 +13,12 @@ public class MathOpsTest {
         assertThrows(IllegalArgumentException.class, () -> mathOps.divide(10, 0));
     }
 
-    // @Test
-    // public void testAddition() {
-    //     MathOps mathOps = new MathOps();
-    //     int result = mathOps.add(2, 3);
-    //     assertEquals(5, result);
-    // }
+    @Test
+    public void testAddition() {
+        MathOps mathOps = new MathOps();
+        int result = mathOps.add(2, 3);
+        assertEquals(5+422, result);
+    }
 
     // @Test
     // public void testSubtraction() {
