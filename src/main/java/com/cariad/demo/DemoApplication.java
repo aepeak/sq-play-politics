@@ -7,9 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		System.out.println("hi there dude");
-		System.out.println("hi there dude");
 		SpringApplication.run(DemoApplication.class, args);
+
+		BasicMath m = new BasicMath();
+		int r = m.add(40, 2);
+		System.out.println("the result is: " + r);
 	}
 
 }
