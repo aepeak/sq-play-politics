@@ -15,7 +15,6 @@ configurations {
 	}
 }
 
-
 repositories {
 	mavenCentral()
 }
@@ -27,8 +26,32 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-tasks.named('test') {
-	useJUnitPlatform()
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+	reports {
+		xml.enabled true
+		html.enabled true
+		html.destination file("${buildDir}/jacocoHtml")
+	}
+	doLast {
+		delete "$buildDir/jacoco"
+	}
+}
+
+plugins.withType(JacocoPlugin) {
+	tasks["test"].finalizedBy 'jacocoTestReport'
+}
+
+test {
+	useJUnitPlatform() {
+		includeEngines 'junit-jupiter'
+	}
+	testLogging {
+		exceptionFormat = 'full'
+	}
+	finalizedBy jacocoTestReport
+	// exclude '**/*ServiceTest*.class'
 }
 
 sonar {
